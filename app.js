@@ -1,14 +1,21 @@
-const { readFile } = require('fs')
+const http = require('http')
 
-console.log('started a first task')
-//check file path
-readFile('./content/first.txt', 'utf-8', (err, result) => {
-    if (err) {
-        console.log(err)
-        return
+const server = http.createServer((req, res) => {
+  if (req.url === '/') {
+    res.end('Home Page')
+  } else if (req.url === '/about') {
+    // BLOCKING CODE !!!!!!
+    for(let i = 0; i<500;i++) {
+        for(let j = 0; j<500;j++) {
+            console.log(`${i} ${j}`)
+        } 
     }
-    console.log(result)
-    console.log('completed first task')
+    res.end('About Page')
+  } else {
+    res.end('Error Page')
+  }
 })
 
-console.log('starting next task')
+server.listen(5000,() => {
+    console.log('Server is listening on port 5000...')
+})

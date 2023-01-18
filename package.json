@@ -5,7 +5,11 @@
   "main": "01-intro.js",
   "scripts": {
     "start": "nodemon app.js",
-    "start2": "nodemon 01-event-loop-examples/04-server.js"
+    "start2": "nodemon 01-event-loop-examples/04-server.js",
+    "start3": "nodemon 02-async-patterns/01-block.js",
+    "start4": "nodemon 02-async-patterns/02-await-pattern.js",
+    "startSync": "nodemon 10-fs-sync",
+    "startASync": "nodemon 11-fs-async"
    },
   "author": "",
   "license": "ISC",
