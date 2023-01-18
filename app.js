@@ -1,7 +1,14 @@
-const _ = require('lodash')
+const { readFile } = require('fs')
 
-const items = [1, [2, [3, [4]]]]
-const newItems = _.flattenDeep(items)
+console.log('started a first task')
+//check file path
+readFile('./content/first.txt', 'utf-8', (err, result) => {
+    if (err) {
+        console.log(err)
+        return
+    }
+    console.log(result)
+    console.log('completed first task')
+})
 
-console.log(newItems
-    )
+console.log('starting next task')
